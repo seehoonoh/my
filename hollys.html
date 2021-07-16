@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+        }
+        .img{
+            vertical-align: bottom;
+        }
+        .wrap{
+            width:360px;
+            height:1768px;       
+        }  
+        /* 헤더 */
+        .header{
+            width: 360px;
+            height: 56px;
+            background-color: #01c982
+        }
+        .logo{
+            text-align: center;
+            font-family: 'Noto Sans KR';
+            font-weight: bold;
+            font-size: 30px;
+            padding-top: 3px;
+        }
+        .logo>a{
+            color: white;
+            text-decoration: none;
+        }
+        .btn-nav{
+            position: absolute;
+            top: 19px;
+            right: 6px;
+            width: 20px;
+            height: 18px;
+        }
+        .line{
+            width: 20px;
+            height: 3px;
+            background: white;
+            margin-bottom: 4px;
+        }
+        /* 헤더끝 */
+        /* tmp */
+        .tmp{
+            position: fixed;
+            top: 19px;
+            left: 6px;
+            z-index: 2;
+            width: 80px;
+            height: 20px;
+            background: orange;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tmp>a{
+            font-size: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        /* tmp끝 */
+        /* 슬라이더 */
+        .slider{
+            position: relative;
+            height: 450px;
+        }
+        .slider-img>a>img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+        .slider-img>a>.slider01{
+            z-index: 1;
+        }
+        .btn-page{
+            position: absolute;
+            z-index: 2;
+            bottom: 30px;
+            width: 360px;
+            text-align: center;
+        }
+        .btn-page>span{
+            display: inline-block;
+            border-radius: 5px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            margin: 0 2px;
+        }
+        .btn-page>.active{
+            background: #01c982;
+        }
+        /* 슬라이더끝 */
+        /* 링크아이콘 */
+        .link-icons{
+            width: 360px;
+            height: 68px;
+            margin-top: 46px;
+            margin-bottom: 46px;
+        }
+        .link-icons>div{
+            float: left;
+            width: 78px;
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+        .link-icons>div>a{
+            display: block;
+            font-family: 'Noto Sans KR';
+            font-weight: 200;
+            font-size: 12px;
+            color: #333333;
+            text-decoration: none;
+            width: 78px;
+            text-align: center;
+        }
+        .link-icon01>a>img{
+            width: 50px;
+        }
+        .link-icon02>a>img{
+            width: 50px;
+        }
+        .link-icon03>a>img{
+            width: 50px;
+        
+        }
+        .link-icon04>a>img{
+            width: 50px;
+            margin-top: 2px;
+        }
+        /* 링크아이콘끝 */
+        /* 배너 */
+        .banner01,.banner02,.banner03{
+            margin-bottom: 6px;
+        }
+        /* 배너끝 */
+        /* 게시판 */
+        .notice{
+            margin-top: 16px;
+            margin-bottom: 16px;
+            height: 70px;
+        }
+        .title>h2{
+            float: left;
+            font-family: 'Noto Sans KR';
+            font-weight: 900;
+            font-size: 14px;
+            color: #01c982;
+            margin-left: 6px;
+        }
+        .title>h3{
+            float: right;
+            margin-right: 6px;
+        }
+        .title>h3>a{
+            font-family: 'NanumGothic';
+            font-weight: 900;
+            font-size: 10px;
+            color: #ff1800;
+            text-decoration: none;
+        }
+        .list01,.list02{
+            clear: both;
+        }
+        .doc-tit{
+            float: left;
+            margin-left: 6px;
+            width: 230px;
+        }
+        .doc-tit>a{
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: 'Noto Sans KR';
+            font-weight: 300;
+            font-size: 10px;
+            color: #666666;
+            text-decoration: none;
+        }
+        .doc-date{
+            float: right;
+            margin-right: 6px;
+        }
+        .doc-date>a{
+            font-family: 'Noto Sans KR';
+            font-weight: 300;
+            font-size: 10px;
+            color: #666666;
+            text-decoration: none;
+        }
+        .list01>.doc-tit{
+            margin-top: 8px;
+        }
+        .list01>.doc-date{
+            margin-top: 2px;
+        }
+        .list02>.doc-tit{
+            margin-top: 3px;
+        }
+        .list02>.doc-date{
+            margin-top: -1px;
+        }
+        /* 게시판끝 */
+        /* 푸터 */
+        .fran{
+            float: left;
+            width: 225px;
+            height: 39px;
+            background: #01c982;
+        }
+        .fran>a,.aca>a{
+            font-family: 'NanumGothic';
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        .aca{
+            float: right;
+            width: 135px;
+            height: 39px;
+            background: #ff1800;
+            
+        }
+        .fran,.aca{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-color: #333333;
+            border-bottom-color: #333333;
+            border-top-style: solid;
+            border-bottom-style: solid;
+        }
+        /* 푸터끝 */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1 class="logo">
+                <a href="hollys.html">
+                    HOLLYS
+                </a>
+            </h1>
+            <div class="btn-nav">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slider-img">
+                <a href="#">
+                    <img class="slider01" src="./images/slider01.jpg" alt="슬라이더1">
+                </a>
+                <a href="#">
+                    <img class="slider02" src="/images/slider02.jpg" alt="슬라이더2">
+                </a>
+                <a href="#">
+                    <img class="slider03" src="/images/slider03.jpg" alt="슬라이더3">
+                </a>
+                <a href="#">
+                    <img class="slider04" src="/images/slider04.jpg" alt="슬라이더4">
+                </a>
+                <a href="#">
+                    <img class="slider05" src="/images/slider05.jpg" alt="슬라이더5">
+                </a>
+            </div>
+            <div class="btn-page">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="link-icons">
+            <div class="link-icon01">
+                <a href="#">
+                    <img src="/images/store.svg" alt="할리스몰">
+                </a>
+                <a href="#">
+                    Hollys Mall
+                </a>
+            </div>
+            <div class="link-icon02">
+                <a href="#">
+                    <img src="/images/restaurant.svg" alt="메뉴">
+                </a>
+                <a href="#">
+                    Menu
+                </a>
+            </div>
+            <div class="link-icon03">
+                <a href="#">
+                    <img src="/images/store (1).svg" alt="스토어">
+                </a>
+                <a href="#">
+                    Store
+                </a>
+            </div>
+            <div class="link-icon04">
+                <a href="#">
+                    <img src="/images/restaurant-membership-card-tool.svg" alt="멤버십">
+                </a>
+                <a href="#">
+                    Membership
+                </a>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner01">
+                <a href="#">
+                    <img src="./images/banner01.jpg" alt="배너1">
+                </a>
+            </div>
+            <div class="banner02">
+                <a href="#">
+                    <img src="./images/banner02.jpg" alt="배너2">
+                </a>
+            </div>
+            <div class="banner03">
+                <a href="#">
+                    <img src="./images/banner03.jpg" alt="배너1">
+                </a>
+            </div>
+        </div>
+        <div class="notice">
+            <div class="title">
+                <h2>
+                    Notice
+                </h2>
+                <h3>
+                    <a href="#">
+                        더보기
+                    </a>
+                </h3>
+            </div>
+            <div class="list01">
+                <p class="doc-tit">
+                    <a href="#">
+                        2021 SUMMER EVENT!!
+                    </a>
+                </p>
+                <p class="doc-date">
+                    <a href="#">
+                        2021.06.15
+                    </a>
+                </p>
+            </div>
+            <div class="list02">
+                <p class="doc-tit">
+                    <a href="#">
+                        [인천 서구청점 오픈] 인천지하철 2호선 서구청역에 새로운 할리스매장이 오픈합니다.
+                    </a>
+                </p>
+                <p class="doc-date">
+                    <a href="#">
+                        2021.05.20
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="fran-aca">
+                <div class="fran">
+                    <a href="#">
+                        가맹문의 및 절차
+                    </a>
+                </div>
+                <div class="aca">
+                    <a href="#">
+                        아카데미
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="tmp">
+                    <a href="#">
+                        창업설명회
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
